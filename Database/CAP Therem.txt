@@ -1,0 +1,59 @@
+CAP Theorem
+
+CAP stands for:
+
+C → Consistency
+A → Availability
+P → Partition Tolerance
+
+	    Network partition?
+                    │
+                    ▼
+                   YES
+                    │
+            ┌───────┴───────┐
+            │               │
+            ▼               ▼
+     Choose Consistency   Choose Availability
+            │               │
+            ▼               ▼
+           CP              AP
+
+
+
+Note : During a partition, you cannot guarantee both C and A.
+
+Node A                   Node B
+
+₹500          ❌         ₹1000
+          Network
+          partition
+
+CP — Consistency + Partition Tolerance
+
+A request reaches Node B.
+
+Node B realizes:
+
+"I can't communicate with Node A, so I can't safely guarantee that my data is current."
+
+Therefore it might reject/fail the operation instead of returning potentially stale information.
+
+You sacrificed:Availability
+
+to preserve:Consistency
+
+AP — Availability + Partition Tolerance
+
+But this time the system says:
+
+"Even though I can't communicate with Node A, Node B should continue accepting/responding to requests."
+
+The response might be stale.
+
+You sacrificed:Strong consistency
+
+to preserve:Availability
+
+
+
