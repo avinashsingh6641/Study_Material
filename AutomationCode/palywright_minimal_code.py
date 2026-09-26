@@ -23,3 +23,21 @@ with sync_playwright() as p:
 
 # for opening traces
 # playwright show-trace path to trace file
+
+'''
+ there are basically two approaches to start the playwright browser
+ 1) with sync_playwright() as p:
+       This is the context-manager approach:
+       When the with block ends, Playwright automatically calls its cleanup/stop logic.
+       e.g     p.stop() is automatically called
+       as you can see above im not calling p.stop() it is called automatically
+       It's generally the cleanest approach for scripts.
+ 2) p = sync_playwright().start()
+        This is the manual approach:
+        this is more like assigned varibale approach which im using it as a class and object in my regression code
+        e.g   p.stop() i will need to call
+        as in my regression suit when im calling close browser in finally im calling p.stop()
+        
+'''
+
+
