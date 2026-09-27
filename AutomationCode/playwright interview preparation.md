@@ -86,9 +86,9 @@ Screenshot
 File Upload
 -
 <pre>
-    page.locator("input[type='file']").set_input_files(
-      "testdata/sample.pdf"
-    )
+  page.locator("input[type='file']").set_input_files(
+    "testdata/sample.pdf"
+  )
   For a file chooser:
   with page.expect_file_chooser() as fc_info:
     page.get_by_text("Upload").click()
