@@ -17,9 +17,10 @@ Locators
       locator.click()
       locator.fill("text")
       locator.press("Enter")
-      locator.check()
-      locator.uncheck()
-      locator.select_option("India")
+      checkbox.check()
+      checkbox.uncheck()
+      checkbox.set_checked(True)
+      dropdown.select_option("India")
       locator.hover()
       locator.focus()
       locator.blur()
@@ -65,8 +66,8 @@ Browser context
 Handling Multiple Pages/Tabs
 -
 <pre>
-    with context.expect_page() as new_page_info:
-      page.get_by_text("Open new tab").click()
+  with context.expect_page() as new_page_info:
+    page.get_by_text("Open new tab").click()
   
   new_page = new_page_info.value
   
