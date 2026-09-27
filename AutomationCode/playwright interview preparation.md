@@ -147,4 +147,27 @@ API
   
       api.dispose()
 </pre>
-
+Questions
+-
+<pre>
+  What is Playwright, and why would you choose Playwright over Selenium?
+    |_ Playwright is a modern browser automation framework developed by Microsoft.
+      It supports Chromium, Firefox, and WebKit and provides features such as auto-waiting,
+      reliable locators, browser-context isolation, network interception, and built-in API testing through APIRequestContext.
+      Browser contexts allow us to create isolated sessions, which is useful for test isolation and parallel execution.
+      Compared with Selenium, Playwright has strong built-in support for modern web applications and 
+      reduces the need for manual synchronization because of its auto-waiting mechanism.
+  
+  What is the difference between Browser, BrowserContext, and Page in Playwright?
+    |_ Browser represents the actual browser instance launched by Playwright, such as Chromium, Firefox, or WebKit.
+       BrowserContext is an isolated browser session with its own cookies, local storage, and session state.
+       Multiple contexts can exist within one browser.
+       Page represents a single browser tab/window within a context, and one context can contain multiple pages.
+  
+  What is a Locator in Playwright, and what is the difference between page.locator() and get_by_role()?
+    |_ A Locator is a mechanism in Playwright for finding and interacting with elements.
+      It provides methods such as click(), fill(), check(), and also supports assertions and state checks.
+      page.locator() can use CSS or XPath selectors, while get_by_role() locates an element based on its accessible role and name.
+      get_by_role() is generally preferred when it provides a clear, user-facing way to identify the element.
+      page.locator() is useful when we need a specific CSS/XPath or other selector.
+</pre>
